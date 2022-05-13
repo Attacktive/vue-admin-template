@@ -7,14 +7,14 @@ Vue.use(Router);
 import Layout from "@/layout";
 
 /**
- * Note: sub-menu only appear when route children.length >= 1
+ * Note: sub-menu only appear when route <code>children.length >= 1</code>
  * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
  *
  * hidden: true                   if set true, item will not show in the sidebar(default is false)
  * alwaysShow: true               if set true, will always show the root menu
  *                                if not set alwaysShow, when item has more than one children route,
- *                                it will becomes nested mode, otherwise not show the root menu
- * redirect: noRedirect           if set noRedirect will no redirect in the breadcrumb
+ *                                it will become nested mode, otherwise not show the root menu
+ * redirect: noRedirect           if set noRedirect will not redirect in the breadcrumb
  * name:'router-name'             the name is used by <keep-alive> (must set!!!)
  * meta : {
     roles: ['admin','editor']    control the page roles (you can set multiple roles)
