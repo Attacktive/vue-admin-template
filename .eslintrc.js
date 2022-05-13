@@ -14,79 +14,95 @@ module.exports = {
 	// add your custom rules here
 	// it is base on https://github.com/vuejs/eslint-config-vue
 	rules: {
-		"vue/html-indent": [
-			"warn", "tab"
-		],
-		"vue/html-closing-bracket-spacing": [
+		"accessor-pairs": "warn",
+		"array-bracket-spacing": [
 			"warn",
-			{
-				"startTag": "never",
-				"endTag": "never",
-				"selfClosingTag": "never"
-			}
+			"never"
 		],
-		"vue/max-attributes-per-line": [
-			"warn",
-			{
-				"singleline": 10,
-				"multiline": {
-					"max": 1
-				}
-			}
-		],
-		"vue/multi-word-component-names": "off",
-		"vue/singleline-html-element-content-newline": "off",
-		"vue/multiline-html-element-content-newline": "off",
-		"vue/name-property-casing": ["error", "PascalCase"],
-		"vue/no-v-html": "off",
-		"accessor-pairs": "error",
 		"arrow-spacing": [
-			"error",
+			"warn",
 			{
 				"before": true,
 				"after": true
 			}
 		],
-		"block-spacing": ["error", "always"],
-		"brace-style": [
-			"error",
-			"1tbs",
-			{ "allowSingleLine": true }
+		"block-spacing": [
+			"warn",
+			"always"
 		],
-		"camelcase": ["off", { "properties": "always" }],
-		"comma-dangle": ["error", "never"],
+		"brace-style": [
+			"warn",
+			"1tbs",
+			{
+				"allowSingleLine": true
+			}
+		],
+		"camelcase": [
+			"warn",
+			{
+				"properties": "always"
+			}
+		],
+		"comma-dangle": [
+			"off",
+			"never"
+		],
 		"comma-spacing": [
-			"error",
+			"warn",
 			{
 				"before": false,
 				"after": true
 			}
 		],
-		"comma-style": ["error", "last"],
+		"comma-style": [
+			"warn",
+			"last"
+		],
 		"constructor-super": "error",
-		"curly": ["error", "multi-line"],
-		"dot-location": ["error", "property"],
-		"eol-last": "error",
-		"eqeqeq": ["error", "always", { "null": "ignore" }],
-		"generator-star-spacing": [
+		"curly": [
 			"error",
+			"multi-line"
+		],
+		"dot-location": [
+			"warn",
+			"property"
+		],
+		"eol-last": "warn",
+		"eqeqeq": [
+			"warn",
+			"always",
+			{
+				"null": "ignore"
+			}
+		],
+		"generator-star-spacing": [
+			"warn",
 			{
 				"before": true,
 				"after": true
 			}
 		],
-		"handle-callback-err": ["error", "^(err|error)$"],
-		"indent": ["error", "tab"],
-		"jsx-quotes": ["error", "prefer-single"],
+		"handle-callback-err": [
+			"warn",
+			"^(err|error)$"
+		],
+		"indent": [
+			"warn",
+			"tab"
+		],
+		"jsx-quotes": [
+			"warn",
+			"prefer-double"
+		],
 		"key-spacing": [
-			"error",
+			"warn",
 			{
 				"beforeColon": false,
 				"afterColon": true
 			}
 		],
 		"keyword-spacing": [
-			"error",
+			"warn",
 			{
 				"before": true,
 				"after": true
@@ -100,15 +116,16 @@ module.exports = {
 			}
 		],
 		"new-parens": "error",
-		"no-array-constructor": "error",
+		"no-array-constructor": "warn",
 		"no-caller": "error",
-		"no-console": "off",
-		"no-class-assign": "error",
+		"no-class-assign": "warn",
 		"no-cond-assign": "error",
+		"no-console": "off",
 		"no-const-assign": "error",
 		"no-control-regex": "off",
-		"no-delete-var": "error",
-		"no-dupe-args": "error",
+		"no-debugger": process.env.NODE_ENV === "production"? "error": "off",
+		"no-delete-var": "warn",
+		"no-dupe-args": "warn",
 		"no-dupe-class-members": "error",
 		"no-dupe-keys": "error",
 		"no-duplicate-case": "error",
@@ -116,15 +133,21 @@ module.exports = {
 		"no-empty-pattern": "error",
 		"no-eval": "error",
 		"no-ex-assign": "error",
-		"no-extend-native": "error",
-		"no-extra-bind": "error",
-		"no-extra-boolean-cast": "error",
-		"no-extra-parens": ["error", "functions"],
-		"no-fallthrough": "error",
+		"no-extend-native": "warn",
+		"no-extra-bind": "warn",
+		"no-extra-boolean-cast": "warn",
+		"no-extra-parens": [
+			"warn",
+			"functions"
+		],
+		"no-fallthrough": "warn",
 		"no-floating-decimal": "error",
 		"no-func-assign": "error",
 		"no-implied-eval": "error",
-		"no-inner-declarations": ["error", "functions"],
+		"no-inner-declarations": [
+			"error",
+			"functions"
+		],
 		"no-invalid-regexp": "error",
 		"no-irregular-whitespace": "error",
 		"no-iterator": "error",
@@ -136,110 +159,192 @@ module.exports = {
 				"allowSwitch": false
 			}
 		],
-		"no-lone-blocks": "error",
+		"no-lone-blocks": "warn",
 		"no-mixed-spaces-and-tabs": "error",
-		"no-multi-spaces": "error",
-		"no-multi-str": "error",
-		"no-multiple-empty-lines": ["error", { "max": 1 }],
+		"no-multi-spaces": "warn",
+		"no-multi-str": "warn",
+		"no-multiple-empty-lines": [
+			"warn",
+			{
+				"max": 2
+			}
+		],
 		"no-native-reassign": "error",
-		"no-negated-in-lhs": "error",
-		"no-new-object": "error",
-		"no-new-require": "error",
-		"no-new-symbol": "error",
-		"no-new-wrappers": "error",
+		"no-new-object": "warn",
+		"no-new-require": "warn",
+		"no-new-symbol": "warn",
+		"no-new-wrappers": "warn",
 		"no-obj-calls": "error",
 		"no-octal": "error",
 		"no-octal-escape": "error",
-		"no-path-concat": "error",
-		"no-proto": "error",
-		"no-redeclare": "error",
-		"no-regex-spaces": "error",
-		"no-return-assign": ["error", "except-parens"],
-		"no-self-assign": "error",
-		"no-self-compare": "error",
-		"no-sequences": "error",
-		"no-shadow-restricted-names": "error",
-		"no-spaced-func": "error",
-		"no-sparse-arrays": "error",
+		"no-path-concat": "warn",
+		"no-proto": "warn",
+		"no-redeclare": "warn",
+		"no-regex-spaces": "warn",
+		"no-return-assign": [
+			"warn",
+			"except-parens"
+		],
+		"no-self-assign": "warn",
+		"no-self-compare": "warn",
+		"no-sequences": "warn",
+		"no-spaced-func": "warn",
 		"no-this-before-super": "error",
-		"no-throw-literal": "error",
-		"no-trailing-spaces": "error",
-		"no-undef": "error",
-		"no-undef-init": "error",
-		"no-unexpected-multiline": "error",
-		"no-unmodified-loop-condition": "error",
-		"no-unneeded-ternary": ["error", { "defaultAssignment": false }],
-		"no-unreachable": "error",
-		"no-unsafe-finally": "error",
+		"no-throw-literal": "warn",
+		"no-trailing-spaces": "warn",
+		"no-undef": "warn",
+		"no-undef-init": "warn",
+		"no-unmodified-loop-condition": "warn",
+		"no-unneeded-ternary": [
+			"warn",
+			{
+				"defaultAssignment": false
+			}
+		],
+		"no-unreachable": "warn",
+		"no-unsafe-finally": "warn",
+		"no-unsafe-negation": "error",
 		"no-unused-vars": [
-			"error",
+			"warn",
 			{
 				"vars": "all",
 				"args": "none"
 			}
 		],
-		"no-useless-call": "error",
-		"no-useless-computed-key": "error",
-		"no-useless-constructor": "error",
-		"no-useless-escape": "off",
-		"no-whitespace-before-property": "error",
-		"no-with": "error",
-		"one-var": ["error", { "initialized": "never" }],
+		"no-useless-call": "warn",
+		"no-useless-computed-key": "warn",
+		"no-useless-constructor": "warn",
+		"no-useless-escape": "warn",
+		"no-whitespace-before-property": "warn",
+		"no-with": "warn",
+		"object-curly-spacing": [
+			"warn",
+			"always",
+			{
+				"objectsInObjects": false
+			}
+		],
+		"one-var": [
+			"warn",
+			{
+				"initialized": "never"
+			}
+		],
 		"operator-linebreak": [
-			"error",
-			"after", {
+			"warn",
+			"after",
+			{
 				"overrides": {
 					"?": "before",
 					":": "before"
 				}
 			}
 		],
-		"padded-blocks": ["error", "never"],
+		"padded-blocks": [
+			"warn",
+			"never"
+		],
+		"prefer-const": "warn",
 		"quotes": [
-			"error",
-			"double", {
+			"warn",
+			"double",
+			{
 				"avoidEscape": true,
 				"allowTemplateLiterals": true
 			}
 		],
-		"semi": ["error", "always"],
+		"semi": [
+			"warn",
+			"always"
+		],
 		"semi-spacing": [
-			"error",
+			"warn",
 			{
 				"before": false,
 				"after": true
 			}
 		],
-		"space-before-blocks": ["error", "always"],
-		"space-before-function-paren": ["error", "never"],
-		"space-in-parens": ["error", "never"],
+		"space-before-blocks": [
+			"warn",
+			"always"
+		],
+		"space-before-function-paren": [
+			"warn",
+			"never"
+		],
+		"space-in-parens": [
+			"warn",
+			"never"
+		],
 		"space-unary-ops": [
-			"error",
+			"warn",
 			{
 				"words": true,
 				"nonwords": false
 			}
 		],
 		"spaced-comment": [
-			"error",
+			"warn",
 			"always",
 			{
-				"markers": ["global", "globals", "eslint", "eslint-disable", "*package", "!", ","]
+				"markers": [
+					"global",
+					"globals",
+					"eslint",
+					"eslint-disable",
+					"*package",
+					"!",
+					","
+				]
 			}
 		],
-		"template-curly-spacing": ["error", "never"],
+		"template-curly-spacing": [
+			"warn",
+			"never"
+		],
 		"use-isnan": "error",
 		"valid-typeof": "error",
-		"wrap-iife": ["error", "any"],
-		"yield-star-spacing": ["error", "both"],
-		"yoda": ["error", "never"],
-		"prefer-const": "error",
-		"no-debugger": process.env.NODE_ENV === "production"? "error": "off",
-		"object-curly-spacing": [
-			"error",
-			"always",
-			{ objectsInObjects: false }
+		"wrap-iife": [
+			"warn",
+			"any"
 		],
-		"array-bracket-spacing": ["error", "never"]
+		"yield-star-spacing": [
+			"warn",
+			"both"
+		],
+		"yoda": [
+			"warn",
+			"never"
+		],
+
+		"vue/html-closing-bracket-spacing": [
+			"warn",
+			{
+				"startTag": "never",
+				"endTag": "never",
+				"selfClosingTag": "never"
+			}
+		],
+		"vue/html-indent": [
+			"warn",
+			"tab"
+		],
+		"vue/max-attributes-per-line": [
+			"warn",
+			{
+				"singleline": 10,
+				"multiline": {
+					"max": 1
+				}
+			}
+		],
+		"vue/multi-word-component-names": "off",
+		"vue/multiline-html-element-content-newline": "off",
+		"vue/name-property-casing": [
+			"error",
+			"PascalCase"
+		],
+		"vue/no-v-html": "off",
+		"vue/singleline-html-element-content-newline": "off"
 	}
 };
