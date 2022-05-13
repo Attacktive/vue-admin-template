@@ -1,7 +1,6 @@
 <template>
 	<div class="login-container">
 		<el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-
 			<div class="title-container">
 				<h3 class="title">Login Form</h3>
 			</div>
@@ -47,7 +46,6 @@
 				<span style="margin-right:20px;">username: admin</span>
 				<span> password: any</span>
 			</div>
-
 		</el-form>
 	</div>
 </template>
@@ -109,12 +107,10 @@ export default {
 			this.$refs.loginForm.validate(valid => {
 				if (valid) {
 					this.loading = true;
-					this.$store.dispatch("user/login", this.loginForm).then(() => {
-						this.$router.push({ path: this.redirect || "/" });
-						this.loading = false;
-					}).catch(() => {
-						this.loading = false;
-					});
+					this.$store.dispatch("user/login", this.loginForm)
+						.then(() => {
+							this.$router.push({ path: this.redirect || "/" });
+						}).finally(() => { this.loading = false; });
 				} else {
 					console.log("error submit!!");
 					return false;
