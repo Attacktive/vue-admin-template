@@ -316,7 +316,6 @@ module.exports = {
 			"warn",
 			"never"
 		],
-
 		"vue/html-closing-bracket-spacing": [
 			"warn",
 			{
